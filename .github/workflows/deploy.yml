@@ -1,4 +1,4 @@
-name: Deploy Personal Website to GitHub Pages
+name: Deploy Personal Next.js site to GitHub Pages
 
 on:
   push:
@@ -11,21 +11,27 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
+      # 1. Checkout the repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      # 2. Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
+      # 3. Install dependencies
       - name: Install dependencies
         run: npm install
 
-      - name: Build and export Next.js app
+      # 4. Build Next.js (static export)
+      - name: Build Next.js app
         run: npm run deploy
 
+      # 5. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
