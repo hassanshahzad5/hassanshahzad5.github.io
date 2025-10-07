@@ -1,38 +1,30 @@
-# .github/workflows/deploy.yml
-name: Deploy Personal Next.js Website to Vercel
+name: Lint Codebase
 
 on:
   push:
     branches:
-      - main  # auto deploy when pushing to main
+      - main
+  pull_request:
 
 jobs:
-  deploy:
+  lint:
     runs-on: ubuntu-latest
+
     steps:
       # 1. Checkout the repo
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Setup Node
+      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # 3. Install dependencies and build
+      # 3. Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build Next.js app
-        run: npm run build
-
-      # 4. Deploy to Vercel
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_USER_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: "--prod"
-          working-directory: .
+      # 4. Run lint command
+      - name: Run ESLint
+        run: npm run lint
