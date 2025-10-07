@@ -4,45 +4,35 @@ name: Deploy Personal Next.js Website to Vercel
 on:
   push:
     branches:
-      - main  # deploy on every push to main
+      - main  # auto deploy when pushing to main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      # 1. Checkout repo
+      # 1. Checkout the repo
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # 2. Set up Node
+      # 2. Setup Node
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # 3. Install dependencies
+      # 3. Install dependencies and build
       - name: Install dependencies
         run: npm install
 
-      # 4. Run lint & tests (optional)
-      - name: Run lint
-        run: npm run lint || true
-
-      - name: Run tests
-        run: npm test || true
-
-      # 5. Build the project
-      - name: Build Next.js
+      - name: Build Next.js app
         run: npm run build
 
-      # 6. Deploy to Vercel
+      # 4. Deploy to Vercel
       - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v21
+        uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_USER_ID }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: "--prod"
           working-directory: .
-          vercel-args: "--prod"  # deploy to production
-          
