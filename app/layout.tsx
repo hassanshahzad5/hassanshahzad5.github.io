@@ -7,6 +7,7 @@ import Footer from "./components/footer"
 const mukta = Mukta({
   variable: "--font-mukta",
   weight: "400",
+  subsets: ["latin"],
 })
 
 export const metadata: Metadata = {
