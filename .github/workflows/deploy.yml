@@ -1,39 +1,48 @@
-name: Deploy Personal Next.js site to GitHub Pages
+# .github/workflows/deploy.yml
+name: Deploy Personal Next.js Website to Vercel
 
 on:
   push:
     branches:
-      - main
-
-permissions:
-  contents: write
+      - main  # deploy on every push to main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout the repo
-      - name: Checkout repository
+      # 1. Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2. Setup Node.js
+      # 2. Set up Node
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 20
 
       # 3. Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # 4. Build Next.js (static export)
-      - name: Build Next.js app
-        run: npm run deploy
+      # 4. Run lint & tests (optional)
+      - name: Run lint
+        run: npm run lint || true
 
-      # 5. Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Run tests
+        run: npm test || true
+
+      # 5. Build the project
+      - name: Build Next.js
+        run: npm run build
+
+      # 6. Deploy to Vercel
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v21
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_USER_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: .
+          vercel-args: "--prod"  # deploy to production
+          
