@@ -22,12 +22,12 @@ export default function Home() {
   }
 
   return (
-    <main className='flex flex-row justify-self-center w-[100vw] h-screen'>
-      <aside className='w-1/3 flex flex-col h-[100%] items-center justify-center bg-zinc-900'>
-        <Image src='/profile.jpg' alt='Picture of Hassan Shahzad' width={150} height={0} className='rounded-xl w-75 h-auto'></Image>
-        <h1 className='text-5xl mt-3'>Hi, I&apos;m Hassan Shahzad</h1>
-        <h2 className='text-2xl'>Full Stack Developer</h2>
-        <button type="button" onClick={handleLocationClick} className=' clickable text-l flex items-end mb-3'>
+    <main className='flex flex-col md:flex-row justify-self-center h-screen w-screen'>
+      <aside className='w-[100vw] md:w-1/3 flex flex-col h-[100vh] items-center justify-center bg-zinc-900 p-8 box-border'>
+        <Image src='/profile.jpg' alt='Picture of Hassan Shahzad' width={100} height={0} className='rounded-xl w-75 h-auto'></Image>
+        <h1 className='text-3xl md:text-5xl mt-3 text-center'>Hi, I&apos;m Hassan Shahzad</h1>
+        <h2 className='text-xl md:text-2xl text-center'>Full Stack Developer</h2>
+        <button type="button" onClick={handleLocationClick} className='clickable text-sm md:text-l flex items-end mb-3'>
           <MdLocationPin className='icon'></MdLocationPin>
           Broomfield, Colorado
         </button>
@@ -48,11 +48,11 @@ export default function Home() {
         </div>
       </aside>
 
-      <section className='w-2/3 flex flex-col items-center h-screen'>
-        <nav className='w-[92%] h-[5vh] border-5 border-zinc-900 flex flex-row justify-center my-5 rounded-3xl'>
-          <button type='button' className='py-1 clickable flex-1 text-center'>Experience & Projects</button>
-          <button type='button' className='py-1 clickable flex-1 text-center'>Creative Technology & Design</button>
-          <button type='button' className='py-1 clickable flex-1 text-center'>Leadership & Volunteer</button>
+      <section className='w-[100vw] md:w-2/3 flex flex-col items-center h-screen'>
+        <nav className='flex flex-row justify-center my-5 w-[90%] border-5 rounded-3xl border-zinc-900'>
+          <button type='button' className='clickable flex-1 p-2 text-center'>Experience & Projects</button>
+          <button type='button' className='clickable flex-1 p-2 text-center'>Creative Technology & Design</button>
+          <button type='button' className='clickable flex-1 p-2 text-center'>Leadership & Volunteer</button>
         </nav>
 
         <article className='w-[92%] h-[95vh] border-5 border-zinc-900 flex flex-row justify-center mb-10 rounded-3xl overflow-y-scroll'>
