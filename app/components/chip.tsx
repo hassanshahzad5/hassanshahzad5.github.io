@@ -43,8 +43,8 @@ export default function Chip({logo, altLogoText, company, location, role, indust
   });
 
   return (
-    <article className='flex flex-row px-3 py-1'>
-      <Image src={logo} alt={altLogoText} width={200} height={0} className='p-2 mr-3 h-auto object-contain shrink items-center justify-center'></Image>
+    <article className='flex flex-col md:flex-row px-3 md:px-0'>
+      <Image src={logo} alt={altLogoText} width={200} height={0} className='py-2 md:p-2 md:mr-3 h-auto object-contain shrink items-center justify-center'></Image>
       <div>
         <p className='text-md'>{company} • {industry}</p>
         <p className='text-sm'>{location}</p>
