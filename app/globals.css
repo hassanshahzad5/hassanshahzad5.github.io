@@ -31,3 +31,15 @@ body {
 .clickable {
  @apply hover:scale-105 hover:cursor-pointer transition-transform
 }
+
+.base-navtab {
+  @apply flex-1 p-2 text-center border-3 border-zinc-900
+}
+
+.active-navtab {
+  @apply bg-zinc-900
+}
+
+.inactive-navtab {
+  @apply hover:bg-zinc-900
+}
