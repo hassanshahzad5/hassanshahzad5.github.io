@@ -1,7 +1,7 @@
 export default function Leadership() {
   return (
     <section>
-      Lead
+      Coming Soon...
     </section>
   );
 }

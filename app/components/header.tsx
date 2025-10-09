@@ -22,7 +22,7 @@ export default function Header() {
   }
 
   return (
-    <aside className='w-[100vw] md:w-1/3 flex flex-col md:h-[100vh] items-center justify-center bg-zinc-900 p-8 box-border'>
+    <aside className='w-[100vw] md:w-1/4 flex flex-col md:h-[100vh] items-center justify-center bg-zinc-900 p-8 box-border'>
       <Image src='/profile.jpg' alt='Picture of Hassan Shahzad' width={100} height={0} className='rounded-xl w-75 h-auto'></Image>
       <h1 className='text-3xl md:text-5xl mt-3 text-center'>Hi, I&apos;m Hassan Shahzad</h1>
       <h2 className='text-xl md:text-2xl text-center'>Full Stack Developer</h2>

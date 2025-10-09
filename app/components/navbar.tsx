@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 export default function Navbar() {
   const pathname = usePathname();
-  console.log(pathname)
 
   const navTabs = [
     { label: 'Experience', href: '/experience' },
