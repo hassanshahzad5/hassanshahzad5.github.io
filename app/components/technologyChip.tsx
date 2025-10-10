@@ -1,8 +1,8 @@
-import Image from 'next/image';
+import IconType from 'react-icons'
 import { technologyMap } from '../data/technologyMap'
 
 type TechnologyChipProps = {
-  name: string;
+  name?: string;
 }
 
 
@@ -20,7 +20,7 @@ export default function TechnologyChip({ name }: TechnologyChipProps) {
     techObj = { name };
   }
 
-  const Logo: IconType | undefined = techObj.logo;
+  const Logo = techObj.logo;
 
   return (
     <div className="flex items-center gap-2 px-2 py-1 rounded-full border" style={{ borderColor: techObj.color }}>

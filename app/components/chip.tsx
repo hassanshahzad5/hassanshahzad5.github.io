@@ -62,8 +62,8 @@ export default function Chip({logo, altLogoText, company, location, role, indust
               <div key={categoryName} className="mt-2">
                 <p className="font-semibold">{categoryName}</p>
                 <div className="flex flex-wrap gap-2 justify-start mt-1">
-                  {techArray.map((tech) => (
-                    <TechnologyChip key={tech.name} {...tech} />
+                  {techArray.map((technology, idx) => (
+                    <TechnologyChip key={idx} {...technology} />
                   ))}
                 </div>
               </div>
