@@ -24,8 +24,8 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className='w-[inherit] flex flex-row justify-between items-center bg-zinc-950 py-3 sticky top-0'>
-      <div className='navbar'>
+    <nav className='w-[100vw] md:w-[inherit] flex flex-col md:flex-row justify-center md:justify-between items-center bg-zinc-950 py-3 sticky top-0'>
+      <div className='navbar collapsible'>
         {navTabs.map(tab => {
           const active = pathname === tab.href;
           return (

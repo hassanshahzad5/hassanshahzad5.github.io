@@ -53,7 +53,7 @@ body {
 }
 
 .navbar {
-  @apply [&>.base-navtab]:mx-1 [&>.base-navtab:first-child]:ml-0 [&>.base-navtab:first-child]:mr-1
+  @apply flex flex-col md:flex-row w-[95%] mb-2 md:mb-0 md:w-auto md:[&>.base-navtab]:mx-1 md:[&>.base-navtab:first-child]:ml-0 md:[&>.base-navtab:first-child]:mr-1
 }
 
 .custom-section {

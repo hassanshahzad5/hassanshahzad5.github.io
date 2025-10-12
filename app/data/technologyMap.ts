@@ -21,6 +21,8 @@ import {
   SiPostman
 } from 'react-icons/si';
 import { GrGraphQl } from 'react-icons/gr';
+import { DiMysql } from "react-icons/di";
+import { BsFiletypeSql } from "react-icons/bs";
 
 export const technologyMap = [
   {
@@ -30,6 +32,8 @@ export const technologyMap = [
       { name: 'TypeScript', logo: SiTypescript, color: '#3178C6', description: 'Typed superset of JavaScript' },
       { name: 'HTML5', logo: SiHtml5, color: '#E34F26', description: 'Markup language for web structure' },
       { name: 'CSS3', logo: SiCss3, color: '#1572B6', description: 'Stylesheet language for design' },
+      { name: 'Python', logo: SiPython, color: '#306998', description: 'General-purpose programming language' },
+      { name: 'SQL', logo: BsFiletypeSql, color: '#4479A1', description: 'Database querying language' },
     ]
   },
   {
@@ -44,10 +48,9 @@ export const technologyMap = [
   {
     name: 'Backend',
     technologies: [
-      { name: 'MySQL', logo: SiMysql, color: '#4479A1', description: 'Relational database system' },
+      { name: 'MySQL', logo: DiMysql, color: '#4479A1', description: 'Relational database system' },
       { name: 'Node.js', logo: SiNodedotjs, color: '#339933', description: 'JavaScript runtime environment' },
       { name: 'Express.js', logo: SiExpress, color: '#000000', description: 'Minimal web framework for Node.js' },
-      { name: 'Python', logo: SiPython, color: '#306998', description: 'General-purpose programming language' },
       { name: 'GraphQL', logo: GrGraphQl, color: '#E10098', description: 'Query language for APIs and runtime for executing queries' },
       { name: 'REST APIs', logo: SiPostman, color: '#FF6C37', description: 'Architectural style for building scalable APIs' },
       { name: 'PostgreSQL', logo: SiPostgresql, color: '#336791', description: 'Relational database emphasizing extensibility' },
