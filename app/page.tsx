@@ -1,9 +1,14 @@
 'use client';
 
 import Experience from './experience/page'
+import AboutMe from './components/about'
+
 
 export default function Home() {
   return (
-    <Experience></Experience>
+    <section className='custom-section'>
+      <AboutMe></AboutMe>
+      <Experience></Experience>
+    </section>
   )
 }

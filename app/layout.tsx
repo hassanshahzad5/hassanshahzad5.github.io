@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Mukta } from "next/font/google";
 import "./globals.css";
 
-import Header from "./components/header"
-import Navbar from "./components/navbar"
+import Header from './components/header'
+import Footer from './components/footer'
+import Navbar from './components/navbar'
 import { StrictMode } from "react";
 
 const mukta = Mukta({
@@ -26,14 +27,16 @@ export default function RootLayout({
     <StrictMode>
       <html lang="en">
         <body className={`${mukta.variable} ${mukta.variable} antialiased`}>
-          <main className='flex flex-col md:flex-row justify-self-center items-center h-screen w-screen'>
+          <main className='flex flex-col justify-self-center items-center w-[100vw] md:w-[60vw] bg-zinc-900'>
+            <Navbar></Navbar>
             <Header></Header>
-            <section className='w-[100vw] md:w-3/4 p-5 flex flex-col items-center h-screen'>
-              <Navbar></Navbar>
+            {/* <section className='w-[100vw] md:w-3/4 p-5 flex flex-col items-center h-screen'>
               <section className='w-[100%] flex flex-col flex-1 justify-start items-start bg-zinc-900 p-5 overflow-y-scroll'>
                 {children}
               </section>
-            </section>
+            </section> */}
+            {children}
+            <Footer></Footer>
           </main>
         </body>
       </html>

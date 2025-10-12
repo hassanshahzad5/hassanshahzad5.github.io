@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 
 import { MdLocationPin, MdEmail } from 'react-icons/md';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
@@ -7,12 +7,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Header() {
-  const handleLocationClick = () => {
-    window.open(
-      'https://www.google.com/maps/place/Broomfield,+CO/@39.9667804,-105.145963,12z/',
-      '_blank'
-    )
-  }
 
   const handleResumeClick = () => {
     window.open(
@@ -22,9 +16,10 @@ export default function Header() {
   }
 
   return (
-    <aside className='w-[100vw] md:w-1/4 flex flex-col md:h-[100vh] items-center justify-center bg-zinc-900 p-8 box-border'>
-      <Image src='/profile.jpg' alt='Picture of Hassan Shahzad' width={100} height={0} className='rounded-xl w-75 h-auto'></Image>
-      <h1 className='text-3xl md:text-5xl mt-3 text-center'>Hi, I&apos;m Hassan Shahzad</h1>
+    <aside className='w-[100%] flex flex-col items-center justify-center box-border'>
+
+      {/* <Image src='/profile.jpg' alt='Picture of Hassan Shahzad' width={100} height={0} className='rounded-xl w-75 h-auto'></Image> */}
+      {/* <h1 className='text-3xl md:text-5xl mt-3 text-center'>Hi, I&apos;m Hassan Shahzad</h1>
       <h2 className='text-xl md:text-2xl text-center'>Full Stack Developer</h2>
       <button type="button" onClick={handleLocationClick} className='clickable text-sm md:text-l flex items-end mb-3'>
         <MdLocationPin className='icon'></MdLocationPin>
@@ -44,7 +39,7 @@ export default function Header() {
         <Link href='https://www.github.com/hassanshahzad5/' target='_blank' rel='noopener noreferrer'>
           <FaGithub className='icon clickable'/>
         </Link>
-      </div>
+      </div> */}
     </aside>
   )
 }
