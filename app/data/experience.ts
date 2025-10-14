@@ -12,9 +12,7 @@ export const experienceData = [
         industry: 'Furniture Resale & Consignment Retail',
         timeline: 'May 2023 - Sep 2025',
         info: [
-          '• Designed, built, and owned end-to-end development of a full stack internal web application, transforming the legacy spreadsheet-based system into a modular, access-controlled, and accessible platform using Node.js, React, Express, and MySQL on Google Cloud Platform reducing input errors by 90%.',
-          '• Developed custom vehicle routing APIs and cost-analysis algorithms in JavaScript to evaluate delivery and pickup profitability, achieving a guaranteed 20%+ profit margin on every appointment.',
-          '• Automated repetitive workflows by engineering cron jobs in JavaScript and Python to detect necessary item status adjustments, enforce item expiration rules, and send customer updates via text (Twilio API) and email (Nodemailer) saving 80 staff hours per week.',
+          'Built and owned a full-stack web app on Node.js, React, Express, and MySQL (GCP), replacing a legacy spreadsheet system and cutting input errors 90%. Created routing and cost-analysis APIs to guarantee 20%+ profit per appointment, and automated workflows with JS/Python cron jobs, saving 80 staff hours weekly.',
         ],
         tech: [
           'JavaScript',
@@ -37,16 +35,13 @@ export const experienceData = [
       {
         photo: '/nist.svg',
         altPhotoText: 'Logo - National Institute of Standards & Technology',
-        company: 'National Institute of Standard & Technology',
+        company: 'National Institute of Standards & Technology',
         location: 'Boulder, CO',
         role: 'Database Administrator (Pathways Intern)',
         industry: 'Government Research & Standards Organization',
         timeline: 'Dec 2021 - May 2023',
         info: [
-          '• Maintained and optimized a SQL-based employee access database linked to legacy electronic lock systems, ensuring secure and reliable entry for 700+ personnel across mission-critical labs and offices.',
-          '• Programmed and synced employee keycards and lock systems by writing data to RFID cards and configuring locks to recognize credentials, guaranteeing alignment between hardware and database records.',
-          '• Developed and implemented data-driven access protocols and optimal facility routing procedures, reducing on-site configuration and travel time by 30% and access latency by 25%.',
-          '• Executed daily database backups and integrity checks on isolated systems to prevent data corruption and maintain operational continuity.',
+          'Maintained and optimized a SQL-based access database linked to electronic locks for 700+ personnel. Programmed keycards, synced hardware with the database, and implemented data-driven access protocols, reducing on-site setup 30% and latency 25%, while performing daily backups to ensure continuity.',
         ],
         tech: [
           'SQL',
@@ -90,8 +85,7 @@ export const experienceData = [
         industry: 'Furniture Resale & Consignment Retail',
         timeline: 'Jun 2025 - Aug 2025',
         info: [
-          '• Led and mentored a software engineering intern through a full development cycle, guiding them in refactoring a Vanilla JS, Node.js, and Express application to integrate React, GraphQL (Apollo), and token-based authentication, and successfully delivering a real-time employee tool-pinning feature.',
-          '• Implemented CI/CD pipelines using GitHub Actions, integrating automated ESLint checks, structured branching and code-review practices, and streamlined deployments to standardize code quality and enable efficient multi-developer collaboration.',
+          'Led and mentored a software engineering intern through a full development cycle, refactoring a Vanilla JS/Node.js/Express app to integrate React, GraphQL (Apollo), and token-based authentication, delivering a real-time employee tool-pinning feature. Implemented CI/CD pipelines with GitHub Actions, automated ESLint checks, structured branching, and streamlined deployments to standardize code quality and enable efficient team collaboration.',
         ],
         tech: [
           'JavaScript',
@@ -117,8 +111,7 @@ export const experienceData = [
         industry: 'Amateur Sports Clubs',
         timeline: 'May 2023 - May 2025',
         info: [
-          `• Founded and scaled a 501(c)(3) nonprofit organization, establishing financial independence through secured public charity status, multi-source sponsorships, and a revenue-generating Shopify merchandise store, while leading a 10-person officer team to manage operations for 100+ members.`,
-          '• Directed and produced the Colorado Collegiate Showdown, guiding a cross-university team to raise over $35K across two years and reduce athlete registration costs by 90%, delivering a professional-level powerlifting event that combined project management, branding, and community outreach.',
+          'Founded and scaled a 501(c)(3) nonprofit, achieving financial independence through public charity status, multi-source sponsorships, and a revenue-generating Shopify store, while leading a 10-person officer team for 100+ members. Directed and produced the Colorado Collegiate Showdown, raising $35K over two years and cutting athlete registration costs 90%, delivering a professional powerlifting event that combined project management, branding, and community outreach.',
         ],
         tech: [
 

@@ -23,9 +23,9 @@ export default function TechnologyChip({ name }: TechnologyChipProps) {
   const Logo = techObj.logo;
 
   return (
-    <div className="flex items-center gap-2 px-2 py-1 rounded-sm border-1" style={{ borderColor: techObj.color }}>
-      {Logo && <Logo className="w-6 h-6 my-1" color={techObj.color} />}
-      <span className="text-sm">{techObj.name}</span>
+    <div className="flex items-center gap-1 md:gap-2 px-2 py-1 rounded-sm border-1" style={{ borderColor: techObj.color }}>
+      {Logo && <Logo className="w-4 h-4 md:w-5 md:h-5 my-1" color={techObj.color} />}
+      <span className="text-xs md:text-sm">{techObj.name}</span>
       {/* {techObj.description && (
         <span className="text-xs text-zinc-500">{techObj.description}</span>
       )} */}
