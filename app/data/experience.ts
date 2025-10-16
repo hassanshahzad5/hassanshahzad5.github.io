@@ -46,7 +46,7 @@ export const experienceData = [
         tech: [
           'SQL',
         ],
-        display: true,
+        display: false,
       },
     ]
   },

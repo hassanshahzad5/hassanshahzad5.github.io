@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className='w-[inherit] flex flex-row justify-center items-center bg-zinc-950 py-3'>
+    <footer className='w-[inherit] flex flex-row justify-center items-center py-3'>
       <p className='text-xs'>&copy; 2025 Hassan Shahzad</p>
     </footer>
   )

@@ -45,12 +45,12 @@ export default function Experience() {
   }
 
   return (
-    <section className='w-[100%] flex flex-col justify-center md:justify-between items-center border-1 border-zinc-800 p-4 rounded-lg'>
+    <section className='w-[100%] flex flex-col justify-center md:justify-between items-center border-1 dark:border-zinc-800 light:border-zinc-200 p-4 rounded-lg'>
       <h2 className='text-2xl md:text-3xl mb-3'>Experience</h2>
-      <nav className='w-[100%] flex flex-row border-1 border-zinc-800'>
+      <nav className='w-[100%] flex flex-row border-1 dark:border-zinc-800 light:border-zinc-200'>
         {renderButtons()}
       </nav>
-      <article className='w-[100%] border-1 border-zinc-800 p-4 flex flex-col gap-8'>
+      <article className='w-[100%] border-1 dark:border-zinc-800 light:border-zinc-200 p-4 flex flex-col gap-8'>
         {renderInformation()}
       </article>
     </section>

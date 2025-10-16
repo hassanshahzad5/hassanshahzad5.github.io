@@ -10,7 +10,7 @@ export default function AboutMe() {
   }
 
   return (
-    <article className='w-[100%] flex flex-col md:flex-row justify-center md:justify-between items-center border-1 border-zinc-800 p-4 rounded-lg'>
+    <article className='w-[100%] flex flex-col md:flex-row justify-center md:justify-between items-center border-1 dark:border-zinc-800 light:border-zinc-200 p-4 rounded-lg'>
       <section>
         <Image src='/profile.jpg' alt='Picture of Hassan Shahzad' width={50} height={0} className='rounded-md w-50 h-auto'></Image>  
       </section>

@@ -1,15 +1,20 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { MdEmail } from 'react-icons/md';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { AiOutlineDownload } from 'react-icons/ai';
 import { RxHamburgerMenu } from "react-icons/rx";
+import { MdOutlineDarkMode } from "react-icons/md";
+import { MdOutlineLightMode } from "react-icons/md";
 import Link from 'next/link';
+
+import { ThemeContext } from '../theme'
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { theme, toggleTheme } = useContext(ThemeContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
   const [isMobile, setIsMobile] = useState(false)
@@ -54,12 +59,17 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className='w-[100vw] md:w-[inherit] flex flex-col md:flex-row justify-center md:justify-between items-center bg-zinc-950 py-3 sticky top-0'>
-      <button aria-labelledby='Menu Toggle Button' onClick={() => {toggleMenu();}} className={`md:hidden w-[100%] flex items-center justify-end ${isMenuOpen ? 'mb-2' : 'mb-0'}`}>
-        <RxHamburgerMenu className='clickable icon mr-3'></RxHamburgerMenu>
-      </button>
+    <nav className='w-[100vw] md:w-[inherit] flex flex-col md:flex-row justify-center md:justify-between my-2 items-center sticky top-0 dark:bg-zinc-950 light:bg-zinc-50'>
+      <div className={`${isMobile ? 'flex' : 'hidden'} w-[95%] items-center justify-between py-2 ${isMenuOpen ? 'mb-2' : 'mb-0'}`}>
+        <button onClick={() => toggleTheme()} className='clickable icon border-1 rounded-full p-0.5'>
+          {theme === 'dark' ? <MdOutlineDarkMode/> : <MdOutlineLightMode/>}
+        </button>
+        <button aria-labelledby='Menu Toggle Button' onClick={() => {toggleMenu();}}>
+          <RxHamburgerMenu className='clickable icon'></RxHamburgerMenu>
+        </button>
+      </div>
 
-      <div className={`${(isMobile && isMenuOpen || !isMobile) ? 'flex' : 'hidden'} w-[100%] flex-col md:flex-row justify-center md:justify-between items-center bg-zinc-950`}>
+      <div className={`${(isMobile && isMenuOpen || !isMobile) ? 'flex' : 'hidden'} w-[100%] flex-col md:flex-row justify-center md:justify-between items-center`}>
         <div className='flex flex-col w-[100%] md:w-auto md:flex-row mb-2 md:mb-0 md:navbar md:gap-2'>
           {
             navTabs.map(tab => {
@@ -86,9 +96,12 @@ export default function Navbar() {
           <button type='button' onClick={() => {
             handleResumeClick();
             closeMenuOnMobile();
-          }} className='clickable flex flex-row items-center justify-center border-1 border-zinc-300 py-0.5 px-1.5 border-l-10'>
+          }} className='clickable flex flex-row items-center justify-center border-1 py-0.5 px-1.5 border-l-10 h-[100%]'>
             <AiOutlineDownload className='icon mr-2'></AiOutlineDownload>
             Resume
+          </button>
+          <button onClick={() => toggleTheme()} className={`${isMobile ? 'hidden' : ''} clickable icon border-1 rounded-full p-0.5`}>
+            {theme === 'dark' ? <MdOutlineDarkMode/> : <MdOutlineLightMode/>}
           </button>
         </div>
       </div>

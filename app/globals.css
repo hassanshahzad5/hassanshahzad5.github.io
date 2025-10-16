@@ -1,35 +1,22 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-mukta: var(--font-mukta);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-mukta);
+  @apply dark:bg-zinc-950 dark:text-zinc-50 light:bg-zinc-50 light:text-zinc-950
 }
 
 .icon {
-  @apply text-zinc-300 w-6 h-6
+  @apply w-6 h-6
 }
 
 .icon-small {
-  @apply text-zinc-300 w-auto h-auto
+  @apply w-auto h-auto
 }
 
 .clickable {
@@ -37,19 +24,19 @@ body {
 }
 
 .base-navtab {
-  @apply flex-1 text-center py-1.5 px-3 rounded-none md:rounded-sm hover:bg-zinc-900
+  @apply flex-1 text-center py-1.5 px-3 rounded-none md:rounded-sm dark:hover:bg-zinc-900 light:hover:bg-zinc-100
 }
 
 .active-navtab {
-  @apply font-bold bg-zinc-900 hover:bg-zinc-900
+  @apply font-bold dark:bg-zinc-900 dark:hover:bg-zinc-900 light:bg-zinc-100 light:hover:bg-zinc-100
 }
 
 .experience-navtab {
-  @apply font-normal bg-zinc-900 hover:bg-zinc-800 hover:scale-101 rounded-none
+  @apply font-normal dark:bg-zinc-900 dark:hover:bg-zinc-800 light:bg-zinc-100 light:hover:bg-zinc-200 hover:scale-101 rounded-none
 }
 
 .experience-navtab-active {
-  @apply font-bold bg-zinc-800 hover:bg-zinc-800
+  @apply font-bold dark:bg-zinc-800 dark:hover:bg-zinc-800 light:bg-zinc-200 light:hover:bg-zinc-200
 }
 
 .navbar {
@@ -57,5 +44,5 @@ body {
 }
 
 .custom-section {
-  @apply flex flex-col w-[100%] p-5 bg-zinc-900 gap-5
+  @apply flex flex-col w-[100%] p-5 dark:bg-zinc-900 light:bg-zinc-100 gap-5
 }
